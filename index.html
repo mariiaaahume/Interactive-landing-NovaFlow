@@ -1,0 +1,303 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NovaFlow v9</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="NovaFlow digital assistants streamline scheduling, reporting and customer support for enterprise teams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- ============ PRELOADER (inspirado en wejungle.com) ============ -->
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="loader__inner">
+    <svg class="loader__logo" id="loaderLogo" viewBox="0 0 73 70" width="73" height="70"></svg>
+    <div class="loader__word"><span>N</span><span>o</span><span>v</span><span>a</span><span>F</span><span>l</span><span>o</span><span>w</span></div>
+  </div>
+  <div class="loader__count"><span id="loaderCount">0</span>%</div>
+  <div class="loader__bar"><i id="loaderBar"></i></div>
+</div>
+
+<!-- ============ HERO ============ -->
+<header class="hero-wrap" id="top">
+  <div class="hero" id="hero">
+    <div class="hero__media" id="heroMedia">
+      <video class="bg-video" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" aria-hidden="true"><source src="assets/hero.mp4" type="video/mp4"></video>
+    </div>
+    <div class="hero__tint"></div>
+
+    <nav class="nav" aria-label="Principal">
+      <a class="brand" href="#top" aria-label="NovaFlow, inicio">
+        <svg class="brand__mark" data-dots="nav" viewBox="0 0 26 25" width="26" height="25" aria-hidden="true"></svg>
+        <span class="brand__name">NovaFlow</span>
+      </a>
+      <ul class="nav__links">
+        <li><a class="roll" href="#offer"><span data-t="Product">Product</span></a></li>
+        <li><a class="roll" href="#about"><span data-t="About">About</span></a></li>
+        <li><a class="roll" href="#how"><span data-t="How it Works">How it Works</span></a></li>
+        <li><a class="roll" href="#contact"><span data-t="Contact">Contact</span></a></li>
+        <li><a class="roll" href="#top"><span data-t="Español">Español</span></a></li>
+      </ul>
+      <a class="btn btn-nav" href="#contact"><span class="btn__fill"></span><span class="btn__label roll"><span data-t="Get started">Get started</span></span></a>
+      <button class="burger" id="burger" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu"><i></i><i></i></button>
+    </nav>
+
+    <div class="hero__content">
+      <span class="badge" data-hero="badge">Enterprise-ready tools</span>
+      <h1 class="hero__title" data-hero="title">
+        <span class="line"><span class="line__in">Automate the</span></span>
+        <span class="rotator" id="rotator" aria-label="Everyday">
+          <span class="rotator__word is-active">Everyday</span>
+          <span class="rotator__word" aria-hidden="true">Scheduling</span>
+          <span class="rotator__word" aria-hidden="true">Reporting</span>
+          <span class="rotator__word" aria-hidden="true">Support</span>
+        </span>
+      </h1>
+      <p class="hero__sub" data-hero="sub">Digital assistants that streamline scheduling, reporting, and customer support for enterprise teams</p>
+      <div class="hero__actions" data-hero="actions">
+        <a class="btn btn-glass" href="#how"><span class="btn__fill"></span><span class="btn__label roll"><span data-t="See how it works">See how it works</span></span></a>
+        <a class="btn btn-start" href="#contact">
+          <span class="btn__fill"></span>
+          <span class="btn__label roll"><span data-t="Get Started">Get Started</span></span>
+          <i class="btn-start__play" aria-hidden="true"><svg viewBox="0 0 10 10" width="9" height="9"><path d="M2.5 1.5v7l6-3.5z" fill="currentColor"/></svg></i>
+        </a>
+      </div>
+      <div class="trusted" data-hero="trusted">
+        <p>TRUSTED BY 80+ BUSINESSES</p>
+        <!-- Marquee de logos en una sola fila (inspirado en pamidordesign.co) -->
+        <div class="logos" role="img" aria-label="Microsoft, Amazon, Adobe, Wacom">
+          <div class="logos__row"><div class="logos__track">
+            <div class="logos__set">
+              <img src="assets/logo-microsoft.png" alt="" width="108" height="23">
+              <img src="assets/logo-amazon.png" alt="" width="90" height="27">
+              <img src="assets/logo-adobe.png" alt="" width="66" height="27">
+              <img src="assets/logo-wacom.png" alt="" width="96" height="17">
+            </div>
+          </div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Menú" hidden>
+  <div class="mobile-menu__top">
+    <a class="brand" href="#top" aria-label="NovaFlow, inicio">
+      <svg class="brand__mark" data-dots="nav" viewBox="0 0 26 25" width="26" height="25" aria-hidden="true"></svg>
+      <span class="brand__name">NovaFlow</span>
+    </a>
+    <button class="menu-close" id="menuClose" type="button" aria-label="Cerrar menú">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><path d="M4 4l12 12M16 4L4 16" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <ul>
+    <li><a href="#offer">Product</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#how">How it Works</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="#top">Español</a></li>
+  </ul>
+  <a class="btn btn-nav btn-nav--lg" href="#contact"><span class="btn__fill"></span><span class="btn__label roll"><span data-t="Get started">Get started</span></span></a>
+</div>
+
+<main>
+  <!-- "A trusted AI-powered" empuja a este bloque, que se encoge y oscurece (inspirado en wejungle.com) -->
+  <div class="push push--a" id="stackA">
+  <!-- ============ STATEMENT ============ -->
+  <section class="statement" id="about">
+    <div class="blob blob--left" aria-hidden="true"></div>
+    <div class="blob blob--right" aria-hidden="true"></div>
+    <div class="wrap statement__inner">
+      <p class="eyebrow">Smart automation focus</p>
+      <p class="statement__text" id="statementText">We design AI-driven workflows that simplify complex tasks, reduce manual effort, and empower enterprise teams to grow.</p>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WE OFFER ============ -->
+  <section class="offer" id="offer">
+    <div class="offer__panel">
+      <div class="wrap">
+        <div class="intro intro--narrow">
+          <h2 class="h-40 reveal-lines">All your workflows, simplified</h2>
+          <p class="muted">NovaFlow digital assistants streamline repetitive tasks — from scheduling to reporting — so your team can focus on high-value work.</p>
+        </div>
+
+        <h2 class="h-64 center reveal-lines">What we offer</h2>
+
+        <div class="cards">
+          <article class="card card--sched" data-scene="cal">
+            <div class="card__art">
+              <div class="scene scene--cal" aria-hidden="true">
+                <img class="cal__base" src="assets/cal-base.png" alt="" width="471" height="430" loading="lazy">
+                <img class="cal__circle" src="assets/cal-circle.png" alt="" width="100" height="100" loading="lazy">
+                <img class="cal__cursor" src="assets/cal-cursor.png" alt="" width="41" height="41" loading="lazy">
+                <img class="cal__chip" src="assets/cal-chip.png" alt="" width="230" height="81" loading="lazy">
+              </div>
+            </div>
+            <h3 class="card__title">Smart Scheduling</h3>
+            <p class="card__text">Automate meeting coordination with real-time availability and zero scheduling conflicts</p>
+          </article>
+
+          <article class="card card--report" data-scene="folder">
+            <div class="card__art">
+              <div class="scene scene--folder" aria-hidden="true">
+                <div class="folder__panel"></div>
+                <img class="folder__front" src="assets/folder-front.png" alt="" width="390" height="462" loading="lazy">
+              </div>
+            </div>
+            <h3 class="card__title">Automated Reporting</h3>
+            <p class="card__text">Generate accurate, ready-to-use reports without manual data gathering</p>
+          </article>
+
+          <article class="card card--support">
+            <video class="bg-video card__bg" autoplay muted loop playsinline preload="metadata" poster="assets/support-poster.jpg" aria-hidden="true"><source src="assets/support.mp4" type="video/mp4"></video>
+            <img class="card__dots" src="assets/support-dots.svg" alt="" width="174" height="167" loading="lazy">
+            <div class="card__art"></div>
+            <h3 class="card__title">AI Customer Support</h3>
+            <p class="card__text">Provide instant, 24/7 answers powered by enterprise-trained AI</p>
+          </article>
+        </div>
+
+        <div class="intro intro--impact">
+          <h2 class="h-40 reveal-lines">Enterprise-grade automation, built to impact</h2>
+          <p class="muted">Designed to save time, reduce manual effort, and boost productivity acrooss your organization</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  </div>
+  <div class="push-hold" aria-hidden="true"></div>
+
+  <!-- ============ TRUSTED PARTNER ============ -->
+  <section class="partner push push--b" id="how">
+    <div class="wrap">
+      <!-- el titular se queda fijo y las tarjetas suben hasta empujarlo -->
+      <div class="partner__pin">
+      <div class="partner__head">
+          <h2 class="h-64 partner__title reveal-lines">A trusted AI-powered consulting partner for enterprises</h2>
+          <span class="asterisk" id="asterisk" aria-hidden="true">*</span>
+          <p class="muted partner__lead">We combine advanced automation enterprise-grade security and tailored consulting to help your bussiness operate smarter, faster and safer</p>
+        </div>
+      </div>
+
+      <div class="bento">
+        <article class="tile tile--purple">
+          <div class="tile__label">
+            <svg data-dots="card" viewBox="0 0 32 31" width="30" height="29" aria-hidden="true"></svg>
+            <span>Automate daily workflows</span>
+          </div>
+          <div class="tile__dots" id="dotsRing" aria-hidden="true">
+            <div class="dots-glow" id="dotsGlow"></div>
+            <svg class="dots-ghost" data-dots="ghost" viewBox="0 0 171 218" width="171" height="218"></svg>
+            <svg class="dots-main" data-dots="main" viewBox="0 0 130 196" width="129" height="195"></svg>
+          </div>
+          <p class="tile__copy">Empower your team with an AI- powered assistant that manages tasks coordinates schedules and provides instant support - so you can focus on truly matters</p>
+        </article>
+
+        <div class="bento__col" id="scalable">
+          <div class="tile tile--image">
+            <div class="tile__zoom" id="scalableZoom"><video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/scalable-poster.jpg" aria-hidden="true"><source src="assets/scalable.mp4" type="video/mp4"></video></div>
+          </div>
+          <article class="tile tile--soft">
+            <h3 class="tile__h">Scalable Solutions</h3>
+            <p class="tile__p">From startups to global enterprises, NovaFlow adapts to your growth with flexible automation</p>
+          </article>
+        </div>
+
+        <article class="tile tile--security">
+          <i class="tile__orb" aria-hidden="true"></i>
+          <div class="tile__body">
+            <h3 class="tile__h">Enterprise-Grade Security</h3>
+            <p class="tile__p">Protect sensitive data with advanced encryption, compliance standards, and AI-driven monitoring.</p>
+            <a class="btn btn-dark" href="#contact">
+              <span class="btn__fill"></span>
+              <svg class="btn-dark__spark" viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><path d="M8 2.5c.5 3.6 1.9 5 5.5 5.5-3.6.5-5 1.9-5.5 5.5-.5-3.6-1.9-5-5.5-5.5 3.6-.5 5-1.9 5.5-5.5Z" fill="currentColor"/><path d="M15 11.5c.25 1.8.95 2.5 2.75 2.75-1.8.25-2.5.95-2.75 2.75-.25-1.8-.95-2.5-2.75-2.75 1.8-.25 2.5-.95 2.75-2.75Z" fill="currentColor"/></svg>
+              <span class="btn__label roll"><span data-t="Get Started">Get Started</span></span>
+            </a>
+          </div>
+          <div class="tile__blobs" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AUTOMATE THE EVERYDAY (tipografía en movimiento, estilo wejungle) ============ -->
+  <section class="automate" id="automate">
+    <!-- Bloqueo de lectura estilo wearefirma.com: la frase se fija y se descubre línea a línea -->
+    <div class="lead-track" id="leadTrack">
+      <div class="wrap automate__lead" id="leadBox">
+        <div class="lead-layer" id="leadA">
+          <p class="automate__line">Automation that saves time, reduces costs,</p>
+          <p class="automate__line">and scales with your business...</p>
+        </div>
+        <div class="lead-layer lead-layer--b" id="leadB" aria-hidden="true">
+          <p class="automate__line">...so your team can focus on high-value work.</p>
+        </div>
+      </div>
+    </div>
+    <div class="automate__track" id="stageTrack">
+      <div class="automate__stage" id="stage">
+        <div class="automate__glow" aria-hidden="true"></div>
+        <div class="automate__glass" aria-hidden="true"></div>
+        <div class="giant" aria-label="Automate the everyday">
+          <div class="giant__row" id="giantA" aria-hidden="true">Automate</div>
+          <div class="giant__row giant__row--b" id="giantB" aria-hidden="true">the everyday</div>
+        </div>
+        <div class="wrap automate__foot">
+          <p id="stageCaption">New brand AI-powered assistants</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CTA + FOOTER ============ -->
+  <section class="closing" id="contact">
+    <div class="closing__inner">
+      <div class="cta" id="cta">
+        <div class="cta__media" id="ctaMedia"><video class="bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/cta-poster.jpg" aria-hidden="true"><source src="assets/cta.mp4" type="video/mp4"></video></div>
+        <h2 class="cta__title reveal-lines">Ready to save time and scale smarter?</h2>
+        <a class="btn btn-demo" href="#contact">
+          <span class="btn__fill"></span>
+          <span class="btn__label roll"><span data-t="Request a Demo">Request a Demo</span></span>
+          <svg class="btn-demo__arrow" viewBox="0 0 26 16" width="24" height="15" aria-hidden="true"><path d="M0 8h23M16 1l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+        </a>
+      </div>
+
+      <!-- Footer: aparición escalonada estilo akqa.com -->
+      <footer class="footer" id="footer">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <div class="footer__logo" data-show>
+              <svg data-dots="footer" viewBox="0 0 73 70" width="73" height="70" aria-hidden="true"></svg>
+              <span class="footer__word">NovaFlow</span>
+            </div>
+            <p data-show>NovaFlow helps enterprises automate daily workflows like scheduling, reporting, and customer support, delivering efficiency, accuracy, and time savings so teams can focus on growth and strategy</p>
+          </div>
+          <div class="footer__cols">
+            <ul><li data-show><strong>Product</strong></li><li data-show><a href="#offer">Features</a></li><li data-show><a href="#offer">Integrations</a></li><li data-show><a href="#contact">Pricing</a></li></ul>
+            <ul><li data-show><strong>Company</strong></li><li data-show><a href="#about">About Us</a></li><li data-show><a href="#about">Careers</a></li><li data-show><a href="#about">Blog</a></li></ul>
+            <ul><li data-show><strong>Resources</strong></li><li data-show><a href="#how">Documentation</a></li><li data-show><a href="#how">Support Center</a></li><li data-show><a href="#contact">Contact Us</a></li></ul>
+          </div>
+        </div>
+        <div class="footer__line" data-show="line"></div>
+        <div class="footer__bottom">
+          <p data-show>@2025 NovaFlow. All Rights Reserved</p>
+          <div><a href="#contact" data-show>Terms &amp; Conditions</a><a href="#contact" data-show>Privacy Policy</a></div>
+        </div>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="dots.js"></script>
+<script src="main.js"></script>
+</body>
+</html>
