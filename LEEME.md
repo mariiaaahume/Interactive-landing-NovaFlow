@@ -1,4 +1,4 @@
-# NovaFlow v9
+# NovaFlow v10
 
 Abre `index.html` en Chrome, Safari o Firefox (necesita internet: fuentes y librerías GSAP + Lenis vienen de CDN).
 Para trabajar cómodamente, sirve la carpeta con un servidor local: `npx serve .` o Live Server de VS Code.
